@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .container{
+        background-image: linear-gradient(rgb(36, 14, 205),black);
+        width: 100%;
+        height: 100vh;
+        background-size: 100%, 100%;
+    }
+    .center{
+        background-image: linear-gradient(yellow,rgb(8, 165, 105));
+        width: 250px;
+        height: 350px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    img{
+        width: 120px;
+        height: 120px;
+        position: absolute;
+        top: -60px;
+        left: calc((250px-120px)/2);
+    }
+    h2{
+        margin-top: 70px;
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+    #textbox{
+        margin:auto;
+        display: block;
+        height: 25px;
+        width: calc(100%-40px);
+        margin-bottom: 10px;
+        font-weight: lighter;
+        text-align: center;
+    }
+    #textfill{
+        margin: auto;
+        display: block;
+        height: 25px;
+        width: calc(100%-40px);
+        margin-bottom: 10px;
+        font-weight:lighter;
+        text-align: center;
+    }
+    #sub{
+        margin: auto;
+        display: block;
+        height: 25px;
+        width: 50px;
+        margin-bottom: 10px;
+        font-weight: lighter;
+        border-radius: 5px;
+    }
+    h2{
+        padding-top: 55px;
+    }
+    #im{
+        padding-top: 60px;
+        margin-left: 65px;
+    }
+</style>    
+</head>
+<body>
+    <div class="container">
+        <div class="center">
+            <img src="user-login-icon-14.png" alt=""id="im">
+            <h2>Log In</h2>
+            <form action="">
+                <input type="text" name="" id="textbox" placeholder="Enter Your Name">
+                <input type="password" name="" id="textfill" placeholder="Enter Password">
+                <input type="submit" value="Submit" id="sub" onclick="myfun()">
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    function myfun(){
+        var name = document.getElementById('textbox').value;
+        var pass = document.getElementById('textfill').value;
+        if(name == ""){
+            alert("Enter Your Name")
+        }
+        else if(name.length<3){
+            alert("Write a minimum of 3 letters");
+        }
+        else if(name.length>20){
+            alert("Name should not be more than 20 letters");
+        }
+        else if(!isNaN(name)){
+            alert("Number Not Allowed");
+        }
+        else if(pass == ""){
+            alert("Enter Your Password");
+        }
+        else if(pass.length<5){
+            alert("Make Strong Password of more than 5 letters")
+        }
+    }
+</script>
+</html>
